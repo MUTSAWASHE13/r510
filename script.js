@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 8, title: "FM Furnishers", description: "Store R6. Contact: +27790834250", image: 'furn.jpeg' },
             { id: 9, title: "TC Beauty", description: "Cosmetic Botique shop. STORE L6. Contact: +27791008068", image: 'cosmetic.jpeg' },
             { id:10, title: "We Clean Rite Laundry", description: "Open 07:30 - 17:30. Contact: +27799507851", image: '' },
+            { id: 11, title: "Jeffin Services", description: "Open 07:30 - 17:30. Contact: +27 (82) 310-3815, +263794489081", image: '' }
         ],
         events: [
             { id: 101, title: "Grand Opening", date: "October 25, 2025", description: "We're thrilled to invite you to the Grand Opening of the R510 Shopping Complex!", image: 'r510.jpeg' },
@@ -167,4 +168,5 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 });
+
 
