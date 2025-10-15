@@ -379,10 +379,11 @@ section {
     padding: 0 20px;
 }
 
+/* FIX: Align the Follow Us text with the centered icons */
 .footer-col h3 {
     color: var(--color-gold);
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center; /* ALIGNMENT FIX */
 }
 
 .footer-col ul li {
@@ -397,23 +398,52 @@ section {
     color: var(--color-light-gold);
 }
 
-.social-icons a {
-    display: inline-block;
-    color: var(--color-gold);
-    font-size: 1.5em;
-    margin-right: 15px;
-    border: 1px solid var(--color-gold);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 38px;
+/* Social Icons Container (Parent) */
+.social-icons {
+    display: flex; /* Makes icons side-by-side */
+    justify-content: center; /* Centers the group of icons */
+    gap: 15px; /* Space between the icons */
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Social Icon Link (The Circle) */
+.social-icons a {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-right: 0; /* Removed old margin */
+    border: 1px solid var(--color-gold);
+    border-radius: 50%; /* Makes the container circular */
+    width: 40px; 
+    height: 40px; 
+    overflow: hidden; /* Clips the image to the circular border */
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    background-color: #333; 
 }
 
 .social-icons a:hover {
     background-color: var(--color-gold);
-    color: var(--color-black);
+    border-color: var(--color-light-gold); 
+}
+
+/* Style for the actual image inside the social icon circle */
+.social-icon-img {
+    width: 28px; 
+    height: 28px; 
+    object-fit: contain; 
+    border-radius: 50%; 
+    background-color: transparent; 
+    padding: 0; 
+    margin: 0; 
+
+    /* Filter to turn black/transparent icons to a gold color */
+    filter: invert(79%) sepia(35%) saturate(541%) hue-rotate(3deg) brightness(101%) contrast(89%);
+}
+
+/* Adjust image color on hover */
+.social-icons a:hover .social-icon-img {
+    /* Filter to turn gold icons into black/dark color when the circle background becomes gold */
+    filter: brightness(0) invert(1); 
 }
 
 .copyright {
